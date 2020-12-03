@@ -17,6 +17,16 @@ for x in f:
 
 length = len(lists)
 
+#pt1
+'''
+for l in range(length):
+    a = lists[l].count(letters[l])
+    print(ranges[l],letters[l], a, lists[l], a >= int(ranges[l][0]) and a <= int(ranges[l][1]))
+    if (a >= int(ranges[l][0]) and a <= int(ranges[l][1])):
+        counter += 1
+'''
+
+#pt2
 for l in range(length):
     a = lists[l].count(letters[l])
     string = lists[l]
@@ -26,12 +36,4 @@ for l in range(length):
     if ((string[int(p1)] == letters[l]) ^ (string[int(p2)] == letters[l])):
         counter += 1
 
-#pt1
-'''
-for l in range(length):
-    a = lists[l].count(letters[l])
-    print(ranges[l],letters[l], a, lists[l], a >= int(ranges[l][0]) and a <= int(ranges[l][1]))
-    if (a >= int(ranges[l][0]) and a <= int(ranges[l][1])):
-        counter += 1
-'''
 print(counter)
