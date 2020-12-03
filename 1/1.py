@@ -1,21 +1,28 @@
 f = open("input.txt", "r")
-list = []
+list = {}
+count = 0
 
 for x in f:
-    list.append(int(x))
+    list[int(x)] = count
+    count += 1
 
-list.sort()
+def part1(max):
+    for i in list:
+        diff = max - i
 
-left = 0
-right = 0
-middle = 0
+        if diff in list:
+            return (i * diff)
 
-for i in list:
-    for j in list:
-        for k in list:
-            if (i + j + k == 2020):
-                left = i
-                right = j
-                middle = k
-print( left, right, middle)
+#print(part1(2020))
+
+def part2(max):
+    for i in list:
+        diff1 = max - i
+        for j in list:
+            diff2 = diff1 - j
+
+            if diff2 in list:
+                return (i*j*diff2)
+
+print(part2(2020))
 
